@@ -9,10 +9,10 @@
   "validatorApiBanLimitPerMinute": 100,
 
   "description4": "How many tcp connections can be made per minute by random ips before the ip is limited or banned",
-  "generalTcpAccessLimitPerMinute": 5,
-  "generalTcpBanLimitPerMinute": 100,
+  "generalTcpAccessLimitPerMinute": 300,
+  "generalTcpBanLimitPerMinute": 450,
 
-  "description5": "How many tcp connections can be made per minute by the discord bot before the ip is limited or banned",
+  "description5": "How many tcp connections can be made per minute by other validators before the ip is limited or banned",
   "description6": "These 2 variables are only used in validator nodes and not rpc nodes",
   "validatorTcpAccessLimitPerMinute": 200,
   "validatorTcpBanLimitPerMinute": 1000,
@@ -76,12 +76,22 @@
 
   "description9": "The interval in milliseconds that this node will wait before checking for new blocks",
   "note": "To properly detect if this node is synced in the Synchronizer class, it is advised to set this value to less than the block time",
-  "synchronizationIntervals": 1000,
+  "synchronizationIntervals": 1,
   "description10": "The timeout in milliseconds that this node will wait before giving up on a block fetch",
   "synchronizationTimeout": 2000,
+  "description13": "The number of blocks to request per synchronization request",
+  "synchronizationRequestBlocksCount": 10,
+  "description14": "The max number of blocks to share per synchronization request from others",
+  "synchronizationShareBlocksCount": 100,
   "description11": "If true, this node will synchronize with the validators, if false, it will synchronize with only the provided nodes",
-  "synchronizeWithValidators": "true",
+  "synchronizeWithValidators": "false",
   "description12": "The list of validator or rpc nodes that this node fetches blocks from",
+  "synchronizationNodes": [
+    {
+      "name": "PWR Public RPC Node",
+      "ip": "51.68.144.27"
+    }
+  ]
 
 }
 
